@@ -37,6 +37,27 @@
 	min-height: 500px;
 }
 
+@media (max-width: 1024px) {
+	.project-container {
+		padding: 20px;
+		min-height: 460px;
+	}
+}
+
+@media (max-width: 768px) {
+	.project-container {
+		padding: 18px;
+		min-height: 430px;
+	}
+}
+
+@media (max-width: 480px) {
+	.project-container {
+		padding: 16px;
+		min-height: 400px;
+	}
+}
+
 .project-header {
 	display: flex;
 	justify-content: space-between;
@@ -100,9 +121,35 @@
 	transform: scale(1.05);
 }
 
+@media (max-width: 1024px) {
+	.project-image img {
+		height: 180px;
+	}
+	
+	.project-image {
+		margin: 14px 0;
+	}
+}
+
 @media (max-width: 768px) {
 	.project-image img {
 		height: 160px;
+	}
+	
+	.project-image {
+		margin: 12px 0;
+		border-radius: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	.project-image img {
+		height: 140px;
+	}
+	
+	.project-image {
+		margin: 10px 0;
+		border-radius: 8px;
 	}
 }
 
@@ -121,6 +168,31 @@
 	font-size: 14px;
 	margin-bottom: 16px;
 	flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+	.project-title {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	
+	.project-description {
+		font-size: 13px;
+		margin-bottom: 14px;
+		line-height: 1.5;
+	}
+}
+
+@media (max-width: 480px) {
+	.project-title {
+		font-size: 16px;
+		margin-bottom: 8px;
+	}
+	
+	.project-description {
+		font-size: 12px;
+		margin-bottom: 12px;
+	}
 }
 
 .project-technologies {
@@ -144,6 +216,55 @@
 .tech-tag:hover {
 	background: #dbeafe;
 	transform: scale(1.05);
+}
+
+.project-category {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	font-size: 11px;
+	padding: 4px 8px;
+	border-radius: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+	.project-technologies {
+		gap: 6px;
+		margin-bottom: 16px;
+	}
+	
+	.tech-tag {
+		font-size: 11px;
+		padding: 3px 8px;
+		border-radius: 14px;
+	}
+	
+	.project-category {
+		font-size: 10px;
+		padding: 3px 6px;
+		border-radius: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	.project-technologies {
+		gap: 4px;
+		margin-bottom: 12px;
+	}
+	
+	.tech-tag {
+		font-size: 10px;
+		padding: 2px 6px;
+		border-radius: 12px;
+	}
+	
+	.project-category {
+		font-size: 9px;
+		padding: 2px 5px;
+		border-radius: 8px;
+	}
 }
 
 .project-link {
