@@ -18,22 +18,19 @@
 }
 
 .page-content {
-	background-color: white;
 	position: relative;
+	width: 100%;
+	padding: 15px;
+	padding-left: 100px;
+	padding-right: 100px;
+	margin: 0;
+	overflow-x: hidden;
 }
 
-.page-content:before,
-.page-content:after {
+.page-content::before {
 	content: "";
 	position: absolute;
 	top: 0;
-	bottom: 0;
-	width: calc((100% - 1200px) / 2);
-	background-color: #fafafa;
-	border: 1px solid #f4f4f5;
-}
-
-.page-content:before {
 	left: 0;
 	z-index: 1;
 }
@@ -46,6 +43,7 @@
 .content-wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
+	animation: fadeIn 0.6s ease-out 0.1s both;
 }
 
 .title {
@@ -54,10 +52,14 @@
 	font-size: 45px;
 	font-weight: 700;
 	width: 70%;
+	animation: slideInFromLeft 0.8s ease-out;
+	transition: all 0.3s ease;
 }
 
 .subtitle {
 	padding-top: 10px;
+	animation: slideInFromLeft 1s ease-out 0.2s both;
+	transition: all 0.3s ease;
 	color: var(--secondary-color);
 	font-size: 16px;
 	line-height: 28px;
@@ -72,52 +74,70 @@
 .page-footer::before {
 	content: "";
 	position: absolute;
-	left: 0;
-	right: 0;
-	border-top: 2px solid var(--tertiary-color);
 }
 
-@media (max-width: 1270px) {
-	.page-content:before,
-	.page-content:after {
-		width: calc((100% - 90%) / 2);
-	}
-
-	.content-wrapper {
-		max-width: 90%;
-		padding-left: 10%;
-		padding-right: 10%;
-	}
+.page-footer::after {
+	right: 0;
 }
 
 @media (max-width: 1024px) {
-	.page-content:before,
-	.page-content:after {
-		width: calc((100% - 950px) / 2);
+	.page-content {
+		padding-left: 50px;
+		padding-right: 50px;
 	}
 
 	.content-wrapper {
-		max-width: 980px;
+		padding: 0 25px;
+		margin: 0 auto;
 	}
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
+	.page-content {
+		padding: 15px 25px;
+	}
+
 	.content-wrapper {
-		max-width: 90%;
+		padding: 0 15px;
 		margin: 0 auto;
-		padding: 0 10px;
 	}
+}
 
-	.page-content:before,
-	.page-content:after {
-		display: none;
+@media (max-width: 600px) {
+	.content-wrapper {
+		padding: 0 15px;
+		margin: 0 auto;
 	}
+}
 
-	.title {
-		width: 100%;
+/* Global Animations */
+@keyframes slideInFromLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
 	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
 
-	.subtitle {
-		width: 100%;
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }

@@ -1,3 +1,6 @@
+@import "../components/common/styles/animations.css";
+@import "../components/common/styles/professional-animations.css";
+
 :root {
 	/* ------- colors ------- */
 	--primary-color: #27272a;

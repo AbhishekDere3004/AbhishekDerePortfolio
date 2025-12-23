@@ -1,0 +1,222 @@
+/* Enhanced Professional Animations for Portfolio */
+
+/* Professional title animation with typing effect */
+.professional-title-animation {
+	overflow: hidden;
+	border-right: 2px solid var(--primary-color);
+	white-space: nowrap;
+	margin: 0 auto;
+	animation: 
+		typing 3.5s steps(40, end),
+		blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+}
+
+@keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: var(--primary-color) }
+}
+
+/* Expertise badge animations */
+.expertise-badge {
+	display: inline-block;
+	padding: 8px 16px;
+	margin: 4px;
+	background: linear-gradient(135deg, var(--link-color), #0891b2);
+	color: white;
+	border-radius: 25px;
+	font-size: 14px;
+	font-weight: 600;
+	transform: scale(0);
+	animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+	transition: all 0.3s ease;
+}
+
+.expertise-badge:hover {
+	transform: scale(1.1);
+	box-shadow: 0 8px 20px rgba(20, 184, 166, 0.4);
+}
+
+.expertise-badge:nth-child(1) { animation-delay: 0.2s; }
+.expertise-badge:nth-child(2) { animation-delay: 0.4s; }
+.expertise-badge:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes popIn {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+/* Professional card hover with glow */
+.professional-card {
+	position: relative;
+	overflow: hidden;
+}
+
+.professional-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(20, 184, 166, 0.2),
+		transparent
+	);
+	transition: left 0.5s;
+}
+
+.professional-card:hover::before {
+	left: 100%;
+}
+
+/* Floating animation for icons */
+.floating-icon {
+	animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+	0%, 100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+/* Professional skill meter animation */
+.skill-meter {
+	width: 100%;
+	height: 8px;
+	background-color: #e5e7eb;
+	border-radius: 4px;
+	overflow: hidden;
+	margin: 8px 0;
+}
+
+.skill-progress {
+	height: 100%;
+	background: linear-gradient(90deg, var(--link-color), #0891b2);
+	border-radius: 4px;
+	transform: translateX(-100%);
+	animation: fillProgress 2s ease-out forwards;
+}
+
+@keyframes fillProgress {
+	to {
+		transform: translateX(0);
+	}
+}
+
+/* Enhanced social icons with professional styling */
+.professional-social {
+	position: relative;
+	display: inline-block;
+	margin: 0 10px;
+	padding: 12px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.professional-social:hover {
+	transform: translateY(-5px) scale(1.1);
+	background: linear-gradient(135deg, var(--link-color), #0891b2);
+	color: white;
+	box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3);
+}
+
+/* Loading spinner for professional content */
+.professional-loader {
+	border: 3px solid #f3f3f3;
+	border-top: 3px solid var(--link-color);
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+/* Certificate shine effect */
+.certificate-shine {
+	position: relative;
+	overflow: hidden;
+}
+
+.certificate-shine::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.4),
+		transparent
+	);
+	animation: shine 3s infinite;
+}
+
+@keyframes shine {
+	0% { left: -100%; }
+	100% { left: 100%; }
+}
+
+/* Professional button with ripple effect */
+.professional-button {
+	position: relative;
+	overflow: hidden;
+	padding: 12px 24px;
+	border: none;
+	border-radius: 8px;
+	background: linear-gradient(135deg, var(--link-color), #0891b2);
+	color: white;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.professional-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(20, 184, 166, 0.3);
+}
+
+.professional-button::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	transition: width 0.6s, height 0.6s;
+}
+
+.professional-button:active::before {
+	width: 300px;
+	height: 300px;
+}

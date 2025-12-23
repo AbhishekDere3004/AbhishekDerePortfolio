@@ -27,10 +27,12 @@
 
 .homepage-title {
 	width: 85% !important;
+	animation: fadeInUp 0.8s ease-out;
 }
 
 .homepage-subtitle {
 	width: 85% !important;
+	animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .homepage-first-area-right-side {
@@ -43,6 +45,12 @@
 	width: 300px;
 	height: 300px;
 	flex-shrink: 0;
+	animation: slideInRight 1s ease-out 0.3s both;
+	transition: transform 0.3s ease;
+}
+
+.homepage-image-container:hover {
+	transform: scale(1.05) rotate(6deg);
 }
 
 .homepage-image-wrapper {
@@ -69,12 +77,21 @@
 .homepage-social-icon {
 	padding-right: 20px;
 	font-size: 25px;
-	transition: color 0.2s ease-in-out;
+	transition: all 0.3s ease-in-out;
 	color: var(--secondary-color);
+	opacity: 0;
+	transform: translateY(20px);
+	animation: fadeInUp 0.6s ease-out forwards;
 }
+
+.homepage-social-icon:nth-child(1) { animation-delay: 0.5s; }
+.homepage-social-icon:nth-child(2) { animation-delay: 0.6s; }
+.homepage-social-icon:nth-child(3) { animation-delay: 0.7s; }
 
 .homepage-social-icon:hover {
 	color: var(--primary-color);
+	transform: translateY(-3px) scale(1.1);
+	text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .homepage-after-title {
@@ -84,21 +101,29 @@
 .homepage-projects {
 	flex-basis: 300px;
 	padding-top: 40px;
+	animation: fadeIn 0.8s ease-out 0.6s both;
 }
 
 .homepage-certificates {
 	flex-basis: 900px;
 	padding-top: 30px;
 	margin-left: -30px;
+	animation: fadeIn 0.8s ease-out 0.8s both;
 }
 
 .homepage-certificate {
 	padding-bottom: 5px;
+	transition: transform 0.3s ease;
+}
+
+.homepage-certificate:hover {
+	transform: translateX(10px);
 }
 
 .homepage-works {
 	flex-basis: 600px;
 	padding-top: 30px;
+	animation: fadeIn 0.8s ease-out 1s both;
 }
 
 @media (max-width: 1024px) {
@@ -220,5 +245,62 @@
 	.homepage-social-icon {
 		font-size: 22px;
 		padding-right: 15px;
+	}
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideInRight {
+	from {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes pulse {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+}
+
+@keyframes bounceIn {
+	from {
+		opacity: 0;
+		transform: scale(0.3);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
 	}
 }

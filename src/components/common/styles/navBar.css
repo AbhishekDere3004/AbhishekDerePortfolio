@@ -48,11 +48,17 @@
 .nav-item a {
 	text-decoration: none;
 	color: var(--primary-color);
+	position: relative;
+	padding: 8px 12px;
+	border-radius: 20px;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-item a:hover {
 	color: var(--link-color);
-	transition: color 0.3s ease-in-out;
+	background-color: rgba(79, 172, 254, 0.1);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(79, 172, 254, 0.2);
 }
 
 @media (max-width: 600px) {
