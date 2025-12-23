@@ -8,6 +8,10 @@
 	border: 1px solid #e0e0e0;
 	transition: all 0.3s ease;
 	background: #fff;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
 .project a {
@@ -35,6 +39,10 @@
 	flex-direction: column;
 	height: 100%;
 	min-height: 500px;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
 @media (max-width: 1024px) {
@@ -46,14 +54,14 @@
 
 @media (max-width: 768px) {
 	.project-container {
-		padding: 18px;
+		padding: 16px;
 		min-height: 430px;
 	}
 }
 
 @media (max-width: 480px) {
 	.project-container {
-		padding: 16px;
+		padding: 12px;
 		min-height: 400px;
 	}
 }
@@ -100,6 +108,9 @@
 	transition: all 0.3s ease;
 	position: relative;
 	border: 2px solid #f0f0f0;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
 }
 
 .project-image img {
@@ -110,6 +121,7 @@
 	display: block;
 	transition: transform 0.4s ease;
 	background: #f8f9fa;
+	max-width: 100%;
 }
 
 .project:hover .project-image {
@@ -168,12 +180,18 @@
 	font-size: 14px;
 	margin-bottom: 16px;
 	flex-grow: 1;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
+	max-width: 100%;
 }
 
 @media (max-width: 768px) {
 	.project-title {
 		font-size: 18px;
 		margin-bottom: 10px;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 	
 	.project-description {
